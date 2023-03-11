@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+<style>
+    table, th, td {
+  border: 1px solid;
+}
+</style>
+</head>
+<body>
+
+
+{%block baseblock %}
+{% if obj %}
+<table >
+    <h3 > Employee Details</h3>
+    <thead  >
+
+    <th>Product Name</th>
+    <th> Product Price</th>
+    <th> Product Qnty</th>
+    <th> Product DESC</th>
+    <th> Product Mfg Date</th>
+
+
+    </thead>
+    {% for lap in obj %}
+    <tr>
+        <td>{{lap.prd_name}}</td>
+        <td>{{lap.prd_price}}</td>
+        <td>{{lap.prd_qnty}}</td>
+        <td>{{lap.prd_desc}}</td>
+        <td>{{lap.prd_mfg_date}}</td>
+        <td><a href="/delete/{{lap.id}}">Delete Record</a>
+        <a href="/update/{{lap.id}}" >Update Record</a></td>
+    </tr>
+    {% endfor%}
+
+
+{%else%}
+<h1> No data found</h1>
+
+{%endif%}
+</table>
+<br><br>
+<center> <a href="/create" class="btn btn-primary btn-lg">Create Record</a>
+<br><br>
+
+
+{%endblock%}
+</body>
+</html>

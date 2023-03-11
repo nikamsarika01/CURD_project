@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock %}
+<form method="post" >
+    <h1> Update Form</h1>
+
+    prd_name :<input type="text" name="prd_name" value="{{obj.prd_name}}">
+    <br><br>
+    prd_price :<input type="text" name="prd_price" value="{{obj.prd_price}}">
+    <br><br>
+    prd_qnty :<input type="text" name="prd_qnty" value="{{obj.prd_qnty}}">
+    <br><br>
+    prd_desc :<input type="text" name="prd_desc" value="{{obj.prd_desc}}">
+    <br><br>
+    prd_mfg_date:<input type="text" name="prd_mfg_date" value="{{obj.prd_mfg_date}}">
+    <br><br>
+    {%csrf_token%}
+    <input type="submit" class="btn btn-primary btn-lg" value="Update Record">
+</form>
+
+
+{%endblock%}
+
+</body>
+</html>
